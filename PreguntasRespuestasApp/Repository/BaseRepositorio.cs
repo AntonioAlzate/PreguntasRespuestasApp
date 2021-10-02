@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PreguntasRespuestasApp.Repository
 {
-    public class BaseRepositorio<T> : IRepositorio<T> where T : class
+    public abstract class BaseRepositorio<T> : IRepositorio<T> where T : class
     {
         public void Insertar(T entidad)
         {

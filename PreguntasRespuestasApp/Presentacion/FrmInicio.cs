@@ -15,23 +15,15 @@ namespace PreguntasRespuestasApp.Presentacion
 {
     public partial class FrmInicio : Form
     {
-        private PreguntaRepository preguntaRepository;
 
         public FrmInicio()
         {
             InitializeComponent();
-            preguntaRepository = new PreguntaRepository();
         }
 
         private void btnIniciarJuego_Click(object sender, EventArgs e)
         {
-            Pregunta pregunta = new Pregunta()
-            {
-                Enunciado = "¿Cuanto es 2+5?",
-                CategoriaId = 1
-            };
-
-            preguntaRepository.Insertar(pregunta);
+            
         }
     }
 }
