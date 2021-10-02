@@ -29,12 +29,69 @@ namespace PreguntasRespuestasApp.Presentacion
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnIniciarJuego = new System.Windows.Forms.Button();
+            this.btnConfiguracion = new System.Windows.Forms.Button();
+            this.btnPuntuaciones = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // btnIniciarJuego
+            // 
+            this.btnIniciarJuego.Location = new System.Drawing.Point(363, 204);
+            this.btnIniciarJuego.Name = "btnIniciarJuego";
+            this.btnIniciarJuego.Size = new System.Drawing.Size(75, 23);
+            this.btnIniciarJuego.TabIndex = 0;
+            this.btnIniciarJuego.Text = "Jugar";
+            this.btnIniciarJuego.UseVisualStyleBackColor = true;
+            // 
+            // btnConfiguracion
+            // 
+            this.btnConfiguracion.Location = new System.Drawing.Point(363, 247);
+            this.btnConfiguracion.Name = "btnConfiguracion";
+            this.btnConfiguracion.Size = new System.Drawing.Size(75, 23);
+            this.btnConfiguracion.TabIndex = 0;
+            this.btnConfiguracion.Text = "Configurar Juego";
+            this.btnConfiguracion.UseVisualStyleBackColor = true;
+            // 
+            // btnPuntuaciones
+            // 
+            this.btnPuntuaciones.Location = new System.Drawing.Point(363, 290);
+            this.btnPuntuaciones.Name = "btnPuntuaciones";
+            this.btnPuntuaciones.Size = new System.Drawing.Size(75, 23);
+            this.btnPuntuaciones.TabIndex = 0;
+            this.btnPuntuaciones.Text = "Scores";
+            this.btnPuntuaciones.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(363, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "BIENVENIDO!";
+            // 
+            // FrmInicio
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnPuntuaciones);
+            this.Controls.Add(this.btnConfiguracion);
+            this.Controls.Add(this.btnIniciarJuego);
+            this.Name = "FrmInicio";
             this.Text = "FrmInicio";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnIniciarJuego;
+        private System.Windows.Forms.Button btnConfiguracion;
+        private System.Windows.Forms.Button btnPuntuaciones;
+        private System.Windows.Forms.Label label1;
     }
 }
