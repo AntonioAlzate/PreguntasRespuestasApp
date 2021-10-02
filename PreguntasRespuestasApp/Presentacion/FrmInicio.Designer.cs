@@ -43,6 +43,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.btnIniciarJuego.TabIndex = 0;
             this.btnIniciarJuego.Text = "Jugar";
             this.btnIniciarJuego.UseVisualStyleBackColor = true;
+            this.btnIniciarJuego.Click += new System.EventHandler(this.btnIniciarJuego_Click);
             // 
             // btnConfiguracion
             // 
