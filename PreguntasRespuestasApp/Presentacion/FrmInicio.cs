@@ -23,7 +23,26 @@ namespace PreguntasRespuestasApp.Presentacion
 
         private void btnIniciarJuego_Click(object sender, EventArgs e)
         {
-            
+            FrmIngresoUsuario frmIngresoUsuario = new FrmIngresoUsuario();
+            frmIngresoUsuario.Show();
+
+            this.Hide();
+        }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            FrmConfiguracion frmConfiguracion = new FrmConfiguracion(this);
+            frmConfiguracion.Show();
+
+            this.Hide();
+        }
+
+        private void btnPuntuaciones_Click(object sender, EventArgs e)
+        {
+            FrmPuntuaciones frmPuntuaciones = new FrmPuntuaciones(this);
+            frmPuntuaciones.Show();
+
+            this.Hide();
         }
     }
 }

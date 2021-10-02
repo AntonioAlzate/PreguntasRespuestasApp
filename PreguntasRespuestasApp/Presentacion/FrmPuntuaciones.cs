@@ -12,9 +12,18 @@ namespace PreguntasRespuestasApp.Presentacion
 {
     public partial class FrmPuntuaciones : Form
     {
-        public FrmPuntuaciones()
+        private Form formInicio;
+
+        public FrmPuntuaciones(Form formInicio)
         {
             InitializeComponent();
+            this.formInicio = formInicio;
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            formInicio.Show();
+            this.Close();
         }
     }
 }

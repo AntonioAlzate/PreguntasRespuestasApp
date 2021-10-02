@@ -16,5 +16,13 @@ namespace PreguntasRespuestasApp.Presentacion
         {
             InitializeComponent();
         }
+
+        private void btnAbandonar_Click(object sender, EventArgs e)
+        {
+            FrmInicio frmInicio = new FrmInicio();
+            frmInicio.Show();
+
+            this.Close();
+        }
     }
 }

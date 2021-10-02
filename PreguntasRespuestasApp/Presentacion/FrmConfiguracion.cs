@@ -12,9 +12,24 @@ namespace PreguntasRespuestasApp.Presentacion
 {
     public partial class FrmConfiguracion : Form
     {
-        public FrmConfiguracion()
+        private Form formInicio;
+
+        public FrmConfiguracion(Form formInicio)
         {
             InitializeComponent();
+            this.formInicio = formInicio;
+        }
+
+        private void btnAgregarPregunta_Click(object sender, EventArgs e)
+        {
+            FrmAgregarNuevaPregunta frmAgregarNuevaPregunta = new FrmAgregarNuevaPregunta();
+            frmAgregarNuevaPregunta.ShowDialog();
+        }
+
+        private void btnVolverInicio_Click(object sender, EventArgs e)
+        {
+            formInicio.Show();
+            this.Close();
         }
     }
 }

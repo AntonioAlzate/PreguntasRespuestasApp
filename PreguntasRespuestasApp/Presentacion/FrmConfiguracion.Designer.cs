@@ -33,6 +33,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAgregarPregunta = new System.Windows.Forms.Button();
+            this.btnVolverInicio = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPreguntasExistentes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,12 +71,24 @@ namespace PreguntasRespuestasApp.Presentacion
             this.btnAgregarPregunta.TabIndex = 3;
             this.btnAgregarPregunta.Text = "AGREGAR NUEVA PREGUNTA";
             this.btnAgregarPregunta.UseVisualStyleBackColor = true;
+            this.btnAgregarPregunta.Click += new System.EventHandler(this.btnAgregarPregunta_Click);
+            // 
+            // btnVolverInicio
+            // 
+            this.btnVolverInicio.Location = new System.Drawing.Point(390, 400);
+            this.btnVolverInicio.Name = "btnVolverInicio";
+            this.btnVolverInicio.Size = new System.Drawing.Size(75, 23);
+            this.btnVolverInicio.TabIndex = 4;
+            this.btnVolverInicio.Text = "Inicio";
+            this.btnVolverInicio.UseVisualStyleBackColor = true;
+            this.btnVolverInicio.Click += new System.EventHandler(this.btnVolverInicio_Click);
             // 
             // FrmConfiguracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVolverInicio);
             this.Controls.Add(this.btnAgregarPregunta);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbCategoria);
@@ -94,5 +107,6 @@ namespace PreguntasRespuestasApp.Presentacion
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAgregarPregunta;
+        private System.Windows.Forms.Button btnVolverInicio;
     }
 }

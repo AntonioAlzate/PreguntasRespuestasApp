@@ -53,6 +53,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.btnConfiguracion.TabIndex = 0;
             this.btnConfiguracion.Text = "Configurar Juego";
             this.btnConfiguracion.UseVisualStyleBackColor = true;
+            this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
             // btnPuntuaciones
             // 
@@ -62,6 +63,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.btnPuntuaciones.TabIndex = 0;
             this.btnPuntuaciones.Text = "Scores";
             this.btnPuntuaciones.UseVisualStyleBackColor = true;
+            this.btnPuntuaciones.Click += new System.EventHandler(this.btnPuntuaciones_Click);
             // 
             // label1
             // 

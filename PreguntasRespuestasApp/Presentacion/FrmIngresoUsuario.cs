@@ -16,5 +16,13 @@ namespace PreguntasRespuestasApp.Presentacion
         {
             InitializeComponent();
         }
+
+        private void btnJugar_Click(object sender, EventArgs e)
+        {
+            FrmResponderPregunta frmResponderPregunta = new FrmResponderPregunta();
+            frmResponderPregunta.Show();
+
+            this.Close();
+        }
     }
 }

@@ -30,10 +30,10 @@ namespace PreguntasRespuestasApp.Presentacion
         private void InitializeComponent()
         {
             this.gboxRespuestas = new System.Windows.Forms.GroupBox();
-            this.rbOpcionA = new System.Windows.Forms.RadioButton();
-            this.rbOpcionB = new System.Windows.Forms.RadioButton();
-            this.rbOpcionC = new System.Windows.Forms.RadioButton();
             this.rbOpcionD = new System.Windows.Forms.RadioButton();
+            this.rbOpcionC = new System.Windows.Forms.RadioButton();
+            this.rbOpcionB = new System.Windows.Forms.RadioButton();
+            this.rbOpcionA = new System.Windows.Forms.RadioButton();
             this.lblNumeroRonda = new System.Windows.Forms.Label();
             this.lblPuntosPregunta = new System.Windows.Forms.Label();
             this.lblPuntajeActual = new System.Windows.Forms.Label();
@@ -55,27 +55,15 @@ namespace PreguntasRespuestasApp.Presentacion
             this.gboxRespuestas.TabStop = false;
             this.gboxRespuestas.Text = "¿En qué país se utilizó la primera bomba atómica en un contexto de combate?";
             // 
-            // rbOpcionA
+            // rbOpcionD
             // 
-            this.rbOpcionA.AutoSize = true;
-            this.rbOpcionA.Location = new System.Drawing.Point(6, 43);
-            this.rbOpcionA.Name = "rbOpcionA";
-            this.rbOpcionA.Size = new System.Drawing.Size(56, 19);
-            this.rbOpcionA.TabIndex = 0;
-            this.rbOpcionA.TabStop = true;
-            this.rbOpcionA.Text = "China";
-            this.rbOpcionA.UseVisualStyleBackColor = true;
-            // 
-            // rbOpcionB
-            // 
-            this.rbOpcionB.AutoSize = true;
-            this.rbOpcionB.Location = new System.Drawing.Point(6, 99);
-            this.rbOpcionB.Name = "rbOpcionB";
-            this.rbOpcionB.Size = new System.Drawing.Size(105, 19);
-            this.rbOpcionB.TabIndex = 0;
-            this.rbOpcionB.TabStop = true;
-            this.rbOpcionB.Text = "Estados Unidos";
-            this.rbOpcionB.UseVisualStyleBackColor = true;
+            this.rbOpcionD.AutoSize = true;
+            this.rbOpcionD.Location = new System.Drawing.Point(6, 214);
+            this.rbOpcionD.Name = "rbOpcionD";
+            this.rbOpcionD.Size = new System.Drawing.Size(53, 19);
+            this.rbOpcionD.TabIndex = 0;
+            this.rbOpcionD.Text = "Rusia";
+            this.rbOpcionD.UseVisualStyleBackColor = true;
             // 
             // rbOpcionC
             // 
@@ -84,20 +72,28 @@ namespace PreguntasRespuestasApp.Presentacion
             this.rbOpcionC.Name = "rbOpcionC";
             this.rbOpcionC.Size = new System.Drawing.Size(56, 19);
             this.rbOpcionC.TabIndex = 0;
-            this.rbOpcionC.TabStop = true;
             this.rbOpcionC.Text = "Japon";
             this.rbOpcionC.UseVisualStyleBackColor = true;
             // 
-            // rbOpcionD
+            // rbOpcionB
             // 
-            this.rbOpcionD.AutoSize = true;
-            this.rbOpcionD.Location = new System.Drawing.Point(6, 214);
-            this.rbOpcionD.Name = "rbOpcionD";
-            this.rbOpcionD.Size = new System.Drawing.Size(53, 19);
-            this.rbOpcionD.TabIndex = 0;
-            this.rbOpcionD.TabStop = true;
-            this.rbOpcionD.Text = "Rusia";
-            this.rbOpcionD.UseVisualStyleBackColor = true;
+            this.rbOpcionB.AutoSize = true;
+            this.rbOpcionB.Location = new System.Drawing.Point(6, 99);
+            this.rbOpcionB.Name = "rbOpcionB";
+            this.rbOpcionB.Size = new System.Drawing.Size(105, 19);
+            this.rbOpcionB.TabIndex = 0;
+            this.rbOpcionB.Text = "Estados Unidos";
+            this.rbOpcionB.UseVisualStyleBackColor = true;
+            // 
+            // rbOpcionA
+            // 
+            this.rbOpcionA.AutoSize = true;
+            this.rbOpcionA.Location = new System.Drawing.Point(6, 43);
+            this.rbOpcionA.Name = "rbOpcionA";
+            this.rbOpcionA.Size = new System.Drawing.Size(56, 19);
+            this.rbOpcionA.TabIndex = 0;
+            this.rbOpcionA.Text = "China";
+            this.rbOpcionA.UseVisualStyleBackColor = true;
             // 
             // lblNumeroRonda
             // 
@@ -143,6 +139,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.btnAbandonar.TabIndex = 4;
             this.btnAbandonar.Text = "ABANDONAR";
             this.btnAbandonar.UseVisualStyleBackColor = true;
+            this.btnAbandonar.Click += new System.EventHandler(this.btnAbandonar_Click);
             // 
             // FrmResponderPregunta
             // 
