@@ -10,6 +10,7 @@ namespace PreguntasRespuestasApp.Entidades
     {
         public int Id { get; set; }
         public int PreguntaId { get; set; }
+        public Pregunta Pregunta { get; set; }
         public string Contenido { get; set; }
         public bool EsCorrecta { get; set; }
     }

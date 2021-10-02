@@ -11,6 +11,8 @@ namespace PreguntasRespuestasApp.Entidades
         public int Id { get; set; }
         public int Valor { get; set; }
         public int RondaId { get; set; }
+        public Ronda Ronda { get; set; }
         public int JugadorId { get; set; }
+        public Jugador Jugador { get; set; }
     }
 }

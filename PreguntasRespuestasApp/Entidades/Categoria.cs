@@ -11,5 +11,6 @@ namespace PreguntasRespuestasApp.Entidades
         public int Id { get; set; }
         public int NivelDificultad { get; set; }
         public int Puntos { get; set; }
+        public List<Pregunta> Preguntas { get; set; }
     }
 }

@@ -10,5 +10,6 @@ namespace PreguntasRespuestasApp.Entidades
     {
         public int Id { get; set; }
         public int Numero { get; set; }
+        public List<Puntaje> Puntajes { get; set; }
     }
 }
