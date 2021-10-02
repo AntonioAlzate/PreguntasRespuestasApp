@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PreguntasRespuestasApp.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,11 @@ namespace PreguntasRespuestasApp.Persistencia
             base.OnConfiguring(optionsBuilder);
         }
 
-        // DbSets
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Jugador> Jugadores { get; set; }
+        public DbSet<Pregunta> Preguntas { get; set; }
+        public DbSet<Puntaje> Puntajes { get; set; }
+        public DbSet<Respuesta> Respuestas { get; set; }
+        public DbSet<Ronda> Rondas { get; set; }
     }
 }
