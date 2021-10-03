@@ -30,6 +30,9 @@ namespace PreguntasRespuestasApp.Presentacion
         private void InitializeComponent()
         {
             this.dtgvPreguntasExistentes = new System.Windows.Forms.DataGridView();
+            this.idPregunta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enunciadoPregunta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriaPregunta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAgregarPregunta = new System.Windows.Forms.Button();
@@ -40,11 +43,36 @@ namespace PreguntasRespuestasApp.Presentacion
             // dtgvPreguntasExistentes
             // 
             this.dtgvPreguntasExistentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvPreguntasExistentes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idPregunta,
+            this.enunciadoPregunta,
+            this.categoriaPregunta});
             this.dtgvPreguntasExistentes.Location = new System.Drawing.Point(68, 92);
             this.dtgvPreguntasExistentes.Name = "dtgvPreguntasExistentes";
             this.dtgvPreguntasExistentes.RowTemplate.Height = 25;
             this.dtgvPreguntasExistentes.Size = new System.Drawing.Size(633, 213);
             this.dtgvPreguntasExistentes.TabIndex = 0;
+            // 
+            // idPregunta
+            // 
+            this.idPregunta.FillWeight = 2.73042F;
+            this.idPregunta.HeaderText = "ID";
+            this.idPregunta.Name = "idPregunta";
+            this.idPregunta.Width = 50;
+            // 
+            // enunciadoPregunta
+            // 
+            this.enunciadoPregunta.FillWeight = 284.7716F;
+            this.enunciadoPregunta.HeaderText = "Enunciado";
+            this.enunciadoPregunta.Name = "enunciadoPregunta";
+            this.enunciadoPregunta.Width = 400;
+            // 
+            // categoriaPregunta
+            // 
+            this.categoriaPregunta.FillWeight = 12.498F;
+            this.categoriaPregunta.HeaderText = "Categoría";
+            this.categoriaPregunta.Name = "categoriaPregunta";
+            this.categoriaPregunta.Width = 150;
             // 
             // cmbCategoria
             // 
@@ -53,6 +81,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(121, 23);
             this.cmbCategoria.TabIndex = 1;
+            this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -108,5 +137,8 @@ namespace PreguntasRespuestasApp.Presentacion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAgregarPregunta;
         private System.Windows.Forms.Button btnVolverInicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPregunta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enunciadoPregunta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoriaPregunta;
     }
 }

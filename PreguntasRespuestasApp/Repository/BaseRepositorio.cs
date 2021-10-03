@@ -16,7 +16,7 @@ namespace PreguntasRespuestasApp.Repository
             {
 
                 db.Add(entidad);
-                db.SaveChangesAsync();
+                db.SaveChanges();
             }
         }
 
