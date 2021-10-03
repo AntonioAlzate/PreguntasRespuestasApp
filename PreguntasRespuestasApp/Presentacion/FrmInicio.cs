@@ -51,7 +51,7 @@ namespace PreguntasRespuestasApp.Presentacion
         private void btnPuntuaciones_Click(object sender, EventArgs e)
         {
             FrmPuntuaciones frmPuntuaciones = new FrmPuntuaciones(this);
-            frmPuntuaciones.Show();
+            frmPuntuaciones.ShowDialog();
 
             this.Close();
         }

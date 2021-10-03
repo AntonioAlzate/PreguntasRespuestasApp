@@ -232,7 +232,8 @@ namespace PreguntasRespuestasApp.Presentacion
 
         private void AbandonarJuegoVoluntariamente()
         {
-            AlmacenarEnTablaPosiciones(CAUSA_ABANDONO);
+            if(ronda > 1)
+                AlmacenarEnTablaPosiciones(CAUSA_ABANDONO);
 
             MessageBox.Show($"Gracias por jugar {nombreJugador} obtuviste {puntosAcumulados} recuerda " +
                 $"consultar la tabla de posiciones", "Fin del Juego", MessageBoxButtons.OK, MessageBoxIcon.Information);

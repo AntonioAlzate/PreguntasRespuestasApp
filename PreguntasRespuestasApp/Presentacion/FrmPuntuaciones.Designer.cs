@@ -35,6 +35,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Puntos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ronda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.causa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPuntuacion)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +47,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.cmbFiltrar.Name = "cmbFiltrar";
             this.cmbFiltrar.Size = new System.Drawing.Size(121, 23);
             this.cmbFiltrar.TabIndex = 0;
+            this.cmbFiltrar.SelectedIndexChanged += new System.EventHandler(this.cmbFiltrar_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -62,30 +64,44 @@ namespace PreguntasRespuestasApp.Presentacion
             this.dtgvPuntuacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombre,
             this.Puntos,
-            this.Ronda});
-            this.dtgvPuntuacion.Location = new System.Drawing.Point(101, 107);
+            this.Ronda,
+            this.causa});
+            this.dtgvPuntuacion.Location = new System.Drawing.Point(40, 107);
             this.dtgvPuntuacion.Name = "dtgvPuntuacion";
             this.dtgvPuntuacion.RowTemplate.Height = 25;
-            this.dtgvPuntuacion.Size = new System.Drawing.Size(599, 264);
+            this.dtgvPuntuacion.Size = new System.Drawing.Size(717, 264);
             this.dtgvPuntuacion.TabIndex = 2;
             // 
             // nombre
             // 
-            this.nombre.HeaderText = "NOMBRE";
+            this.nombre.FillWeight = 369.5432F;
+            this.nombre.HeaderText = "JUGADOR";
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
+            this.nombre.Width = 200;
             // 
             // Puntos
             // 
+            this.Puntos.FillWeight = 5.886964F;
             this.Puntos.HeaderText = "PUNTUACIÓN";
             this.Puntos.Name = "Puntos";
             this.Puntos.ReadOnly = true;
+            this.Puntos.Width = 120;
             // 
             // Ronda
             // 
+            this.Ronda.FillWeight = 24.52185F;
             this.Ronda.HeaderText = "RONDA ALCANZADA";
             this.Ronda.Name = "Ronda";
             this.Ronda.ReadOnly = true;
+            this.Ronda.Width = 120;
+            // 
+            // causa
+            // 
+            this.causa.FillWeight = 0.04803598F;
+            this.causa.HeaderText = "CAUSA FIN JUEGO";
+            this.causa.Name = "causa";
+            this.causa.Width = 250;
             // 
             // btnVolver
             // 
@@ -119,9 +135,10 @@ namespace PreguntasRespuestasApp.Presentacion
         private System.Windows.Forms.ComboBox cmbFiltrar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dtgvPuntuacion;
+        private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Puntos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ronda;
-        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.DataGridViewTextBoxColumn causa;
     }
 }
