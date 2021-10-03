@@ -39,6 +39,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.lblPuntajeActual = new System.Windows.Forms.Label();
             this.btnResponder = new System.Windows.Forms.Button();
             this.btnAbandonar = new System.Windows.Forms.Button();
+            this.lblCategoriaPregunta = new System.Windows.Forms.Label();
             this.gboxRespuestas.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,7 +108,7 @@ namespace PreguntasRespuestasApp.Presentacion
             // lblPuntosPregunta
             // 
             this.lblPuntosPregunta.AutoSize = true;
-            this.lblPuntosPregunta.Location = new System.Drawing.Point(80, 40);
+            this.lblPuntosPregunta.Location = new System.Drawing.Point(80, 61);
             this.lblPuntosPregunta.Name = "lblPuntosPregunta";
             this.lblPuntosPregunta.Size = new System.Drawing.Size(220, 15);
             this.lblPuntosPregunta.TabIndex = 2;
@@ -130,6 +131,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.btnResponder.TabIndex = 4;
             this.btnResponder.Text = "RESPONDER";
             this.btnResponder.UseVisualStyleBackColor = true;
+            this.btnResponder.Click += new System.EventHandler(this.btnResponder_Click);
             // 
             // btnAbandonar
             // 
@@ -141,11 +143,21 @@ namespace PreguntasRespuestasApp.Presentacion
             this.btnAbandonar.UseVisualStyleBackColor = true;
             this.btnAbandonar.Click += new System.EventHandler(this.btnAbandonar_Click);
             // 
+            // lblCategoriaPregunta
+            // 
+            this.lblCategoriaPregunta.AutoSize = true;
+            this.lblCategoriaPregunta.Location = new System.Drawing.Point(80, 37);
+            this.lblCategoriaPregunta.Name = "lblCategoriaPregunta";
+            this.lblCategoriaPregunta.Size = new System.Drawing.Size(167, 15);
+            this.lblCategoriaPregunta.TabIndex = 5;
+            this.lblCategoriaPregunta.Text = "CATEGORÍA DE LA PREGUNTA:";
+            // 
             // FrmResponderPregunta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblCategoriaPregunta);
             this.Controls.Add(this.btnAbandonar);
             this.Controls.Add(this.btnResponder);
             this.Controls.Add(this.lblPuntajeActual);
@@ -173,5 +185,6 @@ namespace PreguntasRespuestasApp.Presentacion
         private System.Windows.Forms.Label lblPuntajeActual;
         private System.Windows.Forms.Button btnResponder;
         private System.Windows.Forms.Button btnAbandonar;
+        private System.Windows.Forms.Label lblCategoriaPregunta;
     }
 }

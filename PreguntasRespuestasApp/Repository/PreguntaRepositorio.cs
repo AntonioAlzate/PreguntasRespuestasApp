@@ -35,13 +35,26 @@ namespace PreguntasRespuestasApp.Repository
             return preguntas;
         }
 
-        internal List<Pregunta> ObtenerPorCategoria(int idCategoria)
+        public List<Pregunta> ObtenerPorCategoria(int idCategoria)
         {
             List<Pregunta> preguntas = new List<Pregunta>();
 
             using (DatabaseContext db = new DatabaseContext())
             {
-                preguntas = db.Preguntas.Where(x => x.CategoriaId == idCategoria).Include(x => x.Categoria).ToList();
+                preguntas = db.Preguntas.Where(x => x.CategoriaId == idCategoria).Include(x => x.Categoria)
+                    .Include(y => y.Respuestas).ToList();
+            }
+
+            return preguntas;
+        }
+
+        public List<Pregunta> ObtenerPorCategoriaConRespuestas(int idCategoria)
+        {
+            List<Pregunta> preguntas = new List<Pregunta>();
+
+            using (DatabaseContext db = new DatabaseContext())
+            {
+                preguntas = db.Preguntas.Where(x => x.CategoriaId == idCategoria).Include(y => y.Respuestas).ToList();
             }
 
             return preguntas;
