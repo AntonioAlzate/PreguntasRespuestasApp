@@ -23,5 +23,10 @@ namespace PreguntasRespuestasApp.Presentacion
             lblFelicitaciones.Text = FELICITACIONES + nombreJugador;
             lblPuntuacion.Text = PUNTOS_ALCANZADOS + puntos + " PUNTOS";
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

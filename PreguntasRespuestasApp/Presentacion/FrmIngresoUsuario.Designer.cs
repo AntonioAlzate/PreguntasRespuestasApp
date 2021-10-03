@@ -95,6 +95,7 @@ namespace PreguntasRespuestasApp.Presentacion
             // 
             // cmbUsuarios
             // 
+            this.cmbUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUsuarios.FormattingEnabled = true;
             this.cmbUsuarios.Location = new System.Drawing.Point(145, 119);
             this.cmbUsuarios.Name = "cmbUsuarios";

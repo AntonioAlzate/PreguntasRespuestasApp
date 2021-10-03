@@ -34,6 +34,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.label2 = new System.Windows.Forms.Label();
             this.lblPuntuacion = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblFelicitaciones
@@ -82,11 +83,22 @@ namespace PreguntasRespuestasApp.Presentacion
             this.label4.Text = "Recuerda consultar la tabla de posiciones para ver tu lugar en la tabla o ver el " +
     "resumen de todas tus partidas!";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(348, 344);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(120, 23);
+            this.btnSalir.TabIndex = 5;
+            this.btnSalir.Text = "Volver al menú";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // FrmJuegoCompletado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblPuntuacion);
             this.Controls.Add(this.label2);
@@ -108,5 +120,6 @@ namespace PreguntasRespuestasApp.Presentacion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblPuntuacion;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

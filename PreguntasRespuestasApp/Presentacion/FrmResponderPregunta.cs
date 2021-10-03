@@ -192,6 +192,8 @@ namespace PreguntasRespuestasApp.Presentacion
                             ronda = 5;
                             AlmacenarEnTablaPosiciones(CAUSA_GANO);
 
+                            this.Hide();
+
                             FrmJuegoCompletado frmJuegoCompletado = new FrmJuegoCompletado(nombreJugador, puntosAcumulados.ToString());
                             frmJuegoCompletado.ShowDialog();
 
@@ -219,6 +221,8 @@ namespace PreguntasRespuestasApp.Presentacion
             }
             else
             {
+                AlmacenarEnTablaPosiciones(CAUSA_RESPUESTA_INCORRECTA);
+
                 MessageBox.Show("Has seleccionado la opción incorrecta y no has logrado obtener " +
                     "puntos, mejor suerte para la próxima", "JUEGO TERMINADO!",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -230,10 +234,20 @@ namespace PreguntasRespuestasApp.Presentacion
         private void AbandonarJuegoVoluntariamente()
         {
             if(ronda > 1)
+            {
                 AlmacenarEnTablaPosiciones(CAUSA_ABANDONO);
-
-            MessageBox.Show($"Gracias por jugar {nombreJugador} obtuviste {puntosAcumulados} recuerda " +
+                
+                MessageBox.Show($"Gracias por jugar {nombreJugador} obtuviste {puntosAcumulados} recuerda " +
                 $"consultar la tabla de posiciones", "Fin del Juego", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show($"Gracias por jugar {nombreJugador} no obtuviste puntos y abandonaste voluntariamente " +
+                    $"la partida, por lo tanto esta no hará parte de tu historial",
+                    "Fin del Juego", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            
 
             this.Close();
         }

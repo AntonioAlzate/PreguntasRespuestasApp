@@ -68,6 +68,7 @@ namespace PreguntasRespuestasApp.Presentacion
 
         private void PasarAResponderPreguntas()
         {
+            this.Hide();
 
             FrmResponderPregunta frmResponderPregunta = new FrmResponderPregunta(nombreUsuario);
             frmResponderPregunta.ShowDialog();

@@ -162,6 +162,7 @@ namespace PreguntasRespuestasApp.Presentacion
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(121, 51);
             this.cmbCategoria.Name = "cmbCategoria";

@@ -42,6 +42,7 @@ namespace PreguntasRespuestasApp.Presentacion
             // 
             // cmbFiltrar
             // 
+            this.cmbFiltrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFiltrar.FormattingEnabled = true;
             this.cmbFiltrar.Location = new System.Drawing.Point(368, 48);
             this.cmbFiltrar.Name = "cmbFiltrar";
@@ -101,6 +102,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.causa.FillWeight = 0.04803598F;
             this.causa.HeaderText = "CAUSA FIN JUEGO";
             this.causa.Name = "causa";
+            this.causa.ReadOnly = true;
             this.causa.Width = 250;
             // 
             // btnVolver

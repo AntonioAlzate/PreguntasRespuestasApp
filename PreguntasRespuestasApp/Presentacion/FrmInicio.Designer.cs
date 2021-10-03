@@ -33,6 +33,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.btnConfiguracion = new System.Windows.Forms.Button();
             this.btnPuntuaciones = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnIniciarJuego
@@ -74,11 +75,22 @@ namespace PreguntasRespuestasApp.Presentacion
             this.label1.TabIndex = 1;
             this.label1.Text = "BIENVENIDO!";
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(363, 341);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPuntuaciones);
             this.Controls.Add(this.btnConfiguracion);
@@ -98,5 +110,6 @@ namespace PreguntasRespuestasApp.Presentacion
         private System.Windows.Forms.Button btnConfiguracion;
         private System.Windows.Forms.Button btnPuntuaciones;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

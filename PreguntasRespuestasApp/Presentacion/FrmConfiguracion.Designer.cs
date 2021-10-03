@@ -58,6 +58,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.idPregunta.FillWeight = 2.73042F;
             this.idPregunta.HeaderText = "ID";
             this.idPregunta.Name = "idPregunta";
+            this.idPregunta.ReadOnly = true;
             this.idPregunta.Width = 50;
             // 
             // enunciadoPregunta
@@ -65,6 +66,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.enunciadoPregunta.FillWeight = 284.7716F;
             this.enunciadoPregunta.HeaderText = "Enunciado";
             this.enunciadoPregunta.Name = "enunciadoPregunta";
+            this.enunciadoPregunta.ReadOnly = true;
             this.enunciadoPregunta.Width = 400;
             // 
             // categoriaPregunta
@@ -72,10 +74,12 @@ namespace PreguntasRespuestasApp.Presentacion
             this.categoriaPregunta.FillWeight = 12.498F;
             this.categoriaPregunta.HeaderText = "Categoría";
             this.categoriaPregunta.Name = "categoriaPregunta";
+            this.categoriaPregunta.ReadOnly = true;
             this.categoriaPregunta.Width = 150;
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(187, 42);
             this.cmbCategoria.Name = "cmbCategoria";
