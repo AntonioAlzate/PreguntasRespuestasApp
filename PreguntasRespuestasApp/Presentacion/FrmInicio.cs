@@ -19,6 +19,16 @@ namespace PreguntasRespuestasApp.Presentacion
         public FrmInicio()
         {
             InitializeComponent();
+
+            InicializarBaseDatos();
+        }
+
+        private void InicializarBaseDatos()
+        {
+            using(DatabaseContext db = new DatabaseContext())
+            {
+                db.Database.EnsureCreated();
+            }
         }
 
         private void btnIniciarJuego_Click(object sender, EventArgs e)
