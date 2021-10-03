@@ -33,18 +33,19 @@ namespace PreguntasRespuestasApp.Presentacion
 
         private void btnIniciarJuego_Click(object sender, EventArgs e)
         {
+            this.Hide();
+
             FrmIngresoUsuario frmIngresoUsuario = new FrmIngresoUsuario();
             frmIngresoUsuario.Show();
 
-            this.Hide();
         }
 
         private void btnConfiguracion_Click(object sender, EventArgs e)
         {
-            FrmConfiguracion frmConfiguracion = new FrmConfiguracion(this);
-            frmConfiguracion.Show();
+            FrmConfiguracion frmConfiguracion = new FrmConfiguracion();
+            frmConfiguracion.ShowDialog();
 
-            this.Hide();
+            this.Close();
         }
 
         private void btnPuntuaciones_Click(object sender, EventArgs e)
@@ -52,7 +53,7 @@ namespace PreguntasRespuestasApp.Presentacion
             FrmPuntuaciones frmPuntuaciones = new FrmPuntuaciones(this);
             frmPuntuaciones.Show();
 
-            this.Hide();
+            this.Close();
         }
     }
 }

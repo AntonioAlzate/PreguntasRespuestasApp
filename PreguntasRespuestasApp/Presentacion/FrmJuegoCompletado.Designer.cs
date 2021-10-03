@@ -32,7 +32,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.lblFelicitaciones = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblPuntuacion = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -63,14 +63,14 @@ namespace PreguntasRespuestasApp.Presentacion
             this.label2.TabIndex = 2;
             this.label2.Text = "Preguntas acertadas 5/5";
             // 
-            // label3
+            // lblPuntuacion
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(348, 193);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 15);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Puntuación final: {PUNTOS}";
+            this.lblPuntuacion.AutoSize = true;
+            this.lblPuntuacion.Location = new System.Drawing.Point(348, 193);
+            this.lblPuntuacion.Name = "lblPuntuacion";
+            this.lblPuntuacion.Size = new System.Drawing.Size(152, 15);
+            this.lblPuntuacion.TabIndex = 3;
+            this.lblPuntuacion.Text = "Puntuación final: {PUNTOS}";
             // 
             // label4
             // 
@@ -88,7 +88,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblPuntuacion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFelicitaciones);
@@ -104,7 +104,7 @@ namespace PreguntasRespuestasApp.Presentacion
         private System.Windows.Forms.Label lblFelicitaciones;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblPuntuacion;
         private System.Windows.Forms.Label label4;
     }
 }

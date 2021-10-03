@@ -16,6 +16,7 @@ namespace PreguntasRespuestasApp.Presentacion
     public partial class FrmIngresoUsuario : Form
     {
         private JugadorRepositorio jugadorRepositorio;
+        private string nombreUsuario;
 
         public FrmIngresoUsuario()
         {
@@ -58,6 +59,8 @@ namespace PreguntasRespuestasApp.Presentacion
                     MessageBox.Show($"Bienvenido {cmbUsuarios.Text}!", "Bienvenido",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    nombreUsuario = cmbUsuarios.Text;
+
                     PasarAResponderPreguntas();
                 }
             }
@@ -65,7 +68,8 @@ namespace PreguntasRespuestasApp.Presentacion
 
         private void PasarAResponderPreguntas()
         {
-            FrmResponderPregunta frmResponderPregunta = new FrmResponderPregunta();
+
+            FrmResponderPregunta frmResponderPregunta = new FrmResponderPregunta(nombreUsuario);
             frmResponderPregunta.Show();
 
             this.Close();
@@ -78,6 +82,8 @@ namespace PreguntasRespuestasApp.Presentacion
             Jugador jugador = new Jugador() { NombreUsuario = nombre };
 
             jugadorRepositorio.Insertar(jugador);
+
+            nombreUsuario = nombre;
         }
 
         private bool JugadorNoExiste()

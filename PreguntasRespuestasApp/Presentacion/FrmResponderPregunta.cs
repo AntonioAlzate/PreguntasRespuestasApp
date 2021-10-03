@@ -37,18 +37,28 @@ namespace PreguntasRespuestasApp.Presentacion
         private bool EsCorrectaRespuestaB;
         private bool EsCorrectaRespuestaC;
         private bool EsCorrectaRespuestaD;
+
+        private string CAUSA_ABANDONO = "Retiro Voluntario";
+        private string CAUSA_RESPUESTA_INCORRECTA = "Respondió Incorrectamente";
+        private string CAUSA_GANO = "Juego Completado";
         #endregion
 
         PreguntaRepositorio preguntaRepositorio;
         CategoriaRepositorio categoriaRepositorio;
         PuntajeRepositorio puntajeRepositorio;
+        RondaRepositorio rondaRepositorio;
+        JugadorRepositorio jugadorRepositorio;
 
-        public FrmResponderPregunta()
+        public FrmResponderPregunta(string nombreJugador)
         {
             InitializeComponent();
+            this.nombreJugador = nombreJugador;
+
             preguntaRepositorio = new PreguntaRepositorio();
             categoriaRepositorio = new CategoriaRepositorio();
             puntajeRepositorio = new PuntajeRepositorio();
+            rondaRepositorio = new RondaRepositorio();
+            jugadorRepositorio = new JugadorRepositorio();
 
             PasarASiguientePregunta();
         }
@@ -142,10 +152,17 @@ namespace PreguntasRespuestasApp.Presentacion
 
         private void btnAbandonar_Click(object sender, EventArgs e)
         {
-            FrmInicio frmInicio = new FrmInicio();
-            frmInicio.Show();
+            DialogResult result = MessageBox.Show($"¿Estas seguro de abandonar el juego? son {puntosPreguntaActual} " +
+                $"puntos que puedes ganar si contestas correctamente",
+                "Abandonar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            this.Close();
+            if (result == DialogResult.Yes)
+            {
+                AbandonarJuegoVoluntariamente();
+
+                IrAFormInicial();
+            }
+
         }
 
         private void btnResponder_Click(object sender, EventArgs e)
@@ -167,29 +184,81 @@ namespace PreguntasRespuestasApp.Presentacion
                         MessageBox.Show($"MUY BIEN ACABAS DE GANAR {puntosPreguntaActual} PUNTOS");
                         categoria++;
                         ronda++;
+
                         puntosAcumulados += puntosPreguntaActual;
 
-                        if(ronda < 6)
+                        if (ronda < 6)
                             PasarASiguientePregunta();
                         else
-                            MessageBox.Show("Juego Completado!");
+                        {
+                            ronda = 5;
+                            AlmacenarEnTablaPosiciones(CAUSA_GANO);
+
+                            FrmJuegoCompletado frmJuegoCompletado = new FrmJuegoCompletado(nombreJugador, puntosAcumulados.ToString());
+                            frmJuegoCompletado.ShowDialog();
+
+                            this.Close();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("PAILAS");
-                    } 
+                        ResponderIncorrectamente();
+                    }
                 }
             }
         }
 
         private void ResponderIncorrectamente()
         {
+            if (ronda > 1)
+            {
+                AlmacenarEnTablaPosiciones(CAUSA_RESPUESTA_INCORRECTA);
+
+                MessageBox.Show("Has seleccionado la opción incorrecta, pero no importa lo puedes volver a " +
+                    "intentar cuantas veces quieras!", "JUEGO TERMINADO!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                IrAFormInicial();
+            }
+            else
+            {
+                MessageBox.Show("Has seleccionado la opción incorrecta y no has logrado obtener " +
+                    "puntos, mejor suerte para la próxima", "JUEGO TERMINADO!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
         }
 
         private void AbandonarJuegoVoluntariamente()
         {
+            AlmacenarEnTablaPosiciones(CAUSA_ABANDONO);
 
+            MessageBox.Show($"Gracias por jugar {nombreJugador} obtuviste {puntosAcumulados} recuerda " +
+                $"consultar la tabla de posiciones", "Fin del Juego", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            IrAFormInicial();
+        }
+
+        private void AlmacenarEnTablaPosiciones(string causa)
+        {
+            Puntaje puntaje = new Puntaje()
+            {
+                Valor = puntosAcumulados,
+                RondaId = rondaRepositorio.ObtenerPorValor(ronda),
+                JugadorId = jugadorRepositorio.ObtenerPorNombre(nombreJugador).Id,
+                Causa = causa
+            };
+
+            puntajeRepositorio.Insertar(puntaje);
+        }
+
+        private void IrAFormInicial()
+        {
+            FrmInicio frmInicio = new FrmInicio();
+            frmInicio.Show();
+
+            this.Close();
         }
 
         private bool EstaSeleccionadaRespuesta()

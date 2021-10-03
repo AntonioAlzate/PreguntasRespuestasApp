@@ -19,10 +19,9 @@ namespace PreguntasRespuestasApp.Presentacion
         private CategoriaRepositorio categoriaRepositorio;
         private PreguntaRepositorio preguntaRepositorio;
 
-        public FrmConfiguracion(Form formInicio)
+        public FrmConfiguracion()
         {
             InitializeComponent();
-            this.formInicio = formInicio;
 
             categoriaRepositorio = new CategoriaRepositorio();
             preguntaRepositorio = new PreguntaRepositorio();
@@ -77,7 +76,9 @@ namespace PreguntasRespuestasApp.Presentacion
 
         private void btnVolverInicio_Click(object sender, EventArgs e)
         {
-            formInicio.Show();
+            FrmInicio frmInicio = new FrmInicio();
+            frmInicio.Show();
+
             this.Close();
         }
 

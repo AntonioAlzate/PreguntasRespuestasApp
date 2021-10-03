@@ -12,9 +12,16 @@ namespace PreguntasRespuestasApp.Presentacion
 {
     public partial class FrmJuegoCompletado : Form
     {
-        public FrmJuegoCompletado()
+
+        private static string FELICITACIONES = "FELICIDADES! ";
+        private static string PUNTOS_ALCANZADOS = "TU PUNTUACIÓN FINAL SON: ";
+
+        public FrmJuegoCompletado(string nombreJugador, string puntos)
         {
             InitializeComponent();
+
+            lblFelicitaciones.Text = FELICITACIONES + nombreJugador;
+            lblPuntuacion.Text = PUNTOS_ALCANZADOS + puntos + " PUNTOS";
         }
     }
 }
