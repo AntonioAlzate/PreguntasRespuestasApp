@@ -29,6 +29,7 @@ namespace PreguntasRespuestasApp.Presentacion
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gboxTipoUsuario = new System.Windows.Forms.GroupBox();
             this.rbUsuarioExistente = new System.Windows.Forms.RadioButton();
             this.rbUsuarioNuevo = new System.Windows.Forms.RadioButton();
@@ -36,7 +37,9 @@ namespace PreguntasRespuestasApp.Presentacion
             this.txtNombreUsuario = new System.Windows.Forms.TextBox();
             this.cmbUsuarios = new System.Windows.Forms.ComboBox();
             this.btnJugar = new System.Windows.Forms.Button();
+            this.epIngresoUsuario = new System.Windows.Forms.ErrorProvider(this.components);
             this.gboxTipoUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epIngresoUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // gboxTipoUsuario
@@ -60,6 +63,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.rbUsuarioExistente.TabStop = true;
             this.rbUsuarioExistente.Text = "Existente";
             this.rbUsuarioExistente.UseVisualStyleBackColor = true;
+            this.rbUsuarioExistente.CheckedChanged += new System.EventHandler(this.rbUsuarioExistente_CheckedChanged);
             // 
             // rbUsuarioNuevo
             // 
@@ -71,6 +75,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.rbUsuarioNuevo.TabStop = true;
             this.rbUsuarioNuevo.Text = "Nuevo";
             this.rbUsuarioNuevo.UseVisualStyleBackColor = true;
+            this.rbUsuarioNuevo.CheckedChanged += new System.EventHandler(this.rbUsuarioNuevo_CheckedChanged);
             // 
             // label1
             // 
@@ -106,6 +111,10 @@ namespace PreguntasRespuestasApp.Presentacion
             this.btnJugar.UseVisualStyleBackColor = true;
             this.btnJugar.Click += new System.EventHandler(this.btnJugar_Click);
             // 
+            // epIngresoUsuario
+            // 
+            this.epIngresoUsuario.ContainerControl = this;
+            // 
             // FrmIngresoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -120,6 +129,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.Text = "FrmIngresoUsuario";
             this.gboxTipoUsuario.ResumeLayout(false);
             this.gboxTipoUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epIngresoUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,5 +144,6 @@ namespace PreguntasRespuestasApp.Presentacion
         private System.Windows.Forms.TextBox txtNombreUsuario;
         private System.Windows.Forms.ComboBox cmbUsuarios;
         private System.Windows.Forms.Button btnJugar;
+        private System.Windows.Forms.ErrorProvider epIngresoUsuario;
     }
 }
