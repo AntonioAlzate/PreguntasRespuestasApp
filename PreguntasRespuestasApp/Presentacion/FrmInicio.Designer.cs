@@ -83,6 +83,8 @@ namespace PreguntasRespuestasApp.Presentacion
             this.Controls.Add(this.btnPuntuaciones);
             this.Controls.Add(this.btnConfiguracion);
             this.Controls.Add(this.btnIniciarJuego);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmInicio";
             this.Text = "FrmInicio";
             this.ResumeLayout(false);

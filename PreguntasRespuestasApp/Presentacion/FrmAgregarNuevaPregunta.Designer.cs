@@ -193,6 +193,8 @@ namespace PreguntasRespuestasApp.Presentacion
             this.Controls.Add(this.gboxRespuestas);
             this.Controls.Add(this.txtEnunciadoPregunta);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "FrmAgregarNuevaPregunta";
             this.Text = "FrmAgregarNuevaPregunta";
             this.gboxRespuestas.ResumeLayout(false);

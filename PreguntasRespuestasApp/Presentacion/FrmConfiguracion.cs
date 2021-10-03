@@ -76,8 +76,7 @@ namespace PreguntasRespuestasApp.Presentacion
 
         private void btnVolverInicio_Click(object sender, EventArgs e)
         {
-            FrmInicio frmInicio = new FrmInicio();
-            frmInicio.Show();
+            Program.frmInicio.Show();
 
             this.Close();
         }

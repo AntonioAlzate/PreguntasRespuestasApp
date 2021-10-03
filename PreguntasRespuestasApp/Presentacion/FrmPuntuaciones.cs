@@ -33,7 +33,8 @@ namespace PreguntasRespuestasApp.Presentacion
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            formInicio.Show();
+            Program.frmInicio.Show();
+
             this.Close();
         }
 

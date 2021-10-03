@@ -122,6 +122,8 @@ namespace PreguntasRespuestasApp.Presentacion
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.dtgvPreguntasExistentes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "FrmConfiguracion";
             this.Text = "FrmConfiguracion";
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPreguntasExistentes)).EndInit();

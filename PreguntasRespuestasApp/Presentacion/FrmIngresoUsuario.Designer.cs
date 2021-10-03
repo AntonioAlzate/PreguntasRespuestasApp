@@ -125,8 +125,11 @@ namespace PreguntasRespuestasApp.Presentacion
             this.Controls.Add(this.txtNombreUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gboxTipoUsuario);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "FrmIngresoUsuario";
             this.Text = "FrmIngresoUsuario";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmIngresoUsuario_FormClosing);
             this.gboxTipoUsuario.ResumeLayout(false);
             this.gboxTipoUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epIngresoUsuario)).EndInit();

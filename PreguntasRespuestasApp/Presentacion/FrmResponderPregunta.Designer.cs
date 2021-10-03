@@ -164,6 +164,8 @@ namespace PreguntasRespuestasApp.Presentacion
             this.Controls.Add(this.lblPuntosPregunta);
             this.Controls.Add(this.lblNumeroRonda);
             this.Controls.Add(this.gboxRespuestas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmResponderPregunta";
             this.Text = "FrmResponderPregunta";
             this.gboxRespuestas.ResumeLayout(false);

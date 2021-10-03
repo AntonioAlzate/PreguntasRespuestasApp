@@ -159,8 +159,6 @@ namespace PreguntasRespuestasApp.Presentacion
             if (result == DialogResult.Yes)
             {
                 AbandonarJuegoVoluntariamente();
-
-                IrAFormInicial();
             }
 
         }
@@ -218,7 +216,6 @@ namespace PreguntasRespuestasApp.Presentacion
                     "intentar cuantas veces quieras!", "JUEGO TERMINADO!",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                IrAFormInicial();
             }
             else
             {
@@ -227,7 +224,7 @@ namespace PreguntasRespuestasApp.Presentacion
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
+            Close();
         }
 
         private void AbandonarJuegoVoluntariamente()
@@ -238,7 +235,7 @@ namespace PreguntasRespuestasApp.Presentacion
             MessageBox.Show($"Gracias por jugar {nombreJugador} obtuviste {puntosAcumulados} recuerda " +
                 $"consultar la tabla de posiciones", "Fin del Juego", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            IrAFormInicial();
+            this.Close();
         }
 
         private void AlmacenarEnTablaPosiciones(string causa)
@@ -296,5 +293,10 @@ namespace PreguntasRespuestasApp.Presentacion
 
             return false;
         }
+
+        //private void FrmResponderPregunta_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    Program.frmInicio.Show();
+        //}
     }
 }

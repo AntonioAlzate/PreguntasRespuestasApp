@@ -92,6 +92,8 @@ namespace PreguntasRespuestasApp.Presentacion
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFelicitaciones);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "FrmJuegoCompletado";
             this.Text = "FrmJuegoCompletado";
             this.ResumeLayout(false);

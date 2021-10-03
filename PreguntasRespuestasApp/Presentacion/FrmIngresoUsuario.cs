@@ -70,7 +70,7 @@ namespace PreguntasRespuestasApp.Presentacion
         {
 
             FrmResponderPregunta frmResponderPregunta = new FrmResponderPregunta(nombreUsuario);
-            frmResponderPregunta.Show();
+            frmResponderPregunta.ShowDialog();
 
             this.Close();
         }
@@ -130,6 +130,11 @@ namespace PreguntasRespuestasApp.Presentacion
                 cmbUsuarios.SelectedIndex = 0;
             }
 
+        }
+
+        private void FrmIngresoUsuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.frmInicio.Show();
         }
     }
 }

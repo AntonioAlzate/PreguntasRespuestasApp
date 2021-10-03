@@ -48,6 +48,7 @@ namespace PreguntasRespuestasApp.Presentacion
             if (EsValidoFormulario())
             {
                 CrearPreguntaConRespuestas();
+                this.Close();
             }
             else
             {
@@ -80,7 +81,6 @@ namespace PreguntasRespuestasApp.Presentacion
             respuestaRepositorio.Insertar(respuestas);
 
             MessageBox.Show("Pregunta insertada correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
         }
 
         private List<Respuesta> CrearRespuestasParaIngresarBD(int preguntaId)
