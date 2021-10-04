@@ -1,5 +1,6 @@
 ﻿using PreguntasRespuestasApp.Entidades;
 using PreguntasRespuestasApp.Repository;
+using PreguntasRespuestasApp.Utilidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,7 +43,7 @@ namespace PreguntasRespuestasApp.Presentacion
         {
             List<Jugador> jugadoresBd = jugadorRepositorio.ObtenerTodos();
 
-            cmbFiltrar.Items.Add("Todos");
+            cmbFiltrar.Items.Add(Mensaje.OPCION_TODOS);
 
             if (jugadoresBd.Count > 0)
             {
@@ -74,7 +75,7 @@ namespace PreguntasRespuestasApp.Presentacion
         private void cmbFiltrar_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (cmbFiltrar.Text == "Todos")
+            if (cmbFiltrar.Text == Mensaje.OPCION_TODOS)
             {
                 ListarTodasPuntuaciones();
             }

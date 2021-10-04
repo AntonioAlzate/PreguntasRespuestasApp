@@ -15,7 +15,6 @@ namespace PreguntasRespuestasApp.Presentacion
 {
     public partial class FrmConfiguracion : Form
     {
-        private Form formInicio;
         private CategoriaRepositorio categoriaRepositorio;
         private PreguntaRepositorio preguntaRepositorio;
 

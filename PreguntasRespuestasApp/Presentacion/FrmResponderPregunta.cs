@@ -31,7 +31,6 @@ namespace PreguntasRespuestasApp.Presentacion
         #endregion
 
         #region Datos internos
-        private int idPreguntaElegida;
 
         private bool EsCorrectaRespuestaA;
         private bool EsCorrectaRespuestaB;
@@ -65,10 +64,20 @@ namespace PreguntasRespuestasApp.Presentacion
 
         private void PasarASiguientePregunta()
         {
-            ActualizarValorCategoria();
-            ActualizarPregunta(categoria);
-            ActualizarMarcadoresEnPantalla();
-            QuitarSeleccionRespuesta();
+            try
+            {
+                ActualizarValorCategoria();
+                ActualizarPregunta(categoria);
+                ActualizarMarcadoresEnPantalla();
+                QuitarSeleccionRespuesta();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Mensaje.ERROR_INESPERADO, Mensaje.ERROR_TITULO,
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                Application.Exit();
+            }
         }
 
         private void ActualizarPregunta(int categoria)
@@ -168,12 +177,13 @@ namespace PreguntasRespuestasApp.Presentacion
 
             if (!EstaSeleccionadaRespuesta())
             {
-                MessageBox.Show("Debes seleccionar una respuesta", "Sin selección",
+                MessageBox.Show(Mensaje.SELECCIONAR_RESPUESTA_PARA_CONTINUAR, Mensaje.SIN_SELECCION,
                     MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             else
             {
-                DialogResult result = MessageBox.Show("ÚLTIMA PALABRA", "¿Estás seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show(Mensaje.ULTIMA_PALABRA, Mensaje.ESTA_SEGURO,
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
@@ -214,8 +224,7 @@ namespace PreguntasRespuestasApp.Presentacion
             {
                 AlmacenarEnTablaPosiciones(CAUSA_RESPUESTA_INCORRECTA);
 
-                MessageBox.Show("Has seleccionado la opción incorrecta, pero no importa lo puedes volver a " +
-                    "intentar cuantas veces quieras!", "JUEGO TERMINADO!",
+                MessageBox.Show(Mensaje.OPCION_INCORRECTA_CON_PUNTOS, Mensaje.JUEGO_TERMINADO,
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
@@ -223,12 +232,11 @@ namespace PreguntasRespuestasApp.Presentacion
             {
                 AlmacenarEnTablaPosiciones(CAUSA_RESPUESTA_INCORRECTA);
 
-                MessageBox.Show("Has seleccionado la opción incorrecta y no has logrado obtener " +
-                    "puntos, mejor suerte para la próxima", "JUEGO TERMINADO!",
+                MessageBox.Show(Mensaje.OPCION_INCORRECTA_SIN_PUNTOS, Mensaje.JUEGO_TERMINADO,
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            Close();
+            this.Close();
         }
 
         private void AbandonarJuegoVoluntariamente()
@@ -238,13 +246,13 @@ namespace PreguntasRespuestasApp.Presentacion
                 AlmacenarEnTablaPosiciones(CAUSA_ABANDONO);
                 
                 MessageBox.Show($"Gracias por jugar {nombreJugador} obtuviste {puntosAcumulados} recuerda " +
-                $"consultar la tabla de posiciones", "Fin del Juego", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                $"consultar la tabla de posiciones", Mensaje.JUEGO_TERMINADO, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show($"Gracias por jugar {nombreJugador} no obtuviste puntos y abandonaste voluntariamente " +
                     $"la partida, por lo tanto esta no hará parte de tu historial",
-                    "Fin del Juego", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Mensaje.JUEGO_TERMINADO, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             
@@ -263,14 +271,6 @@ namespace PreguntasRespuestasApp.Presentacion
             };
 
             puntajeRepositorio.Insertar(puntaje);
-        }
-
-        private void IrAFormInicial()
-        {
-            FrmInicio frmInicio = new FrmInicio();
-            frmInicio.Show();
-
-            this.Close();
         }
 
         private bool EstaSeleccionadaRespuesta()
@@ -308,9 +308,5 @@ namespace PreguntasRespuestasApp.Presentacion
             return false;
         }
 
-        //private void FrmResponderPregunta_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    Program.frmInicio.Show();
-        //}
     }
 }

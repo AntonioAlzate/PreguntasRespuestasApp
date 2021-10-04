@@ -3,12 +3,6 @@ using PreguntasRespuestasApp.Repository;
 using PreguntasRespuestasApp.Utilidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PreguntasRespuestasApp.Presentacion
@@ -50,10 +44,6 @@ namespace PreguntasRespuestasApp.Presentacion
                 CrearPreguntaConRespuestas();
                 this.Close();
             }
-            else
-            {
-                MessageBox.Show("No se puede Crear");
-            }
         }
 
         private void CrearPreguntaConRespuestas()
@@ -80,7 +70,8 @@ namespace PreguntasRespuestasApp.Presentacion
             List<Respuesta> respuestas = CrearRespuestasParaIngresarBD(preguntaInsertada.Id);
             respuestaRepositorio.Insertar(respuestas);
 
-            MessageBox.Show("Pregunta insertada correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Mensaje.PREGUNTA_INSERTADA_CORRECTAMETE, Mensaje.PREGUNTA_INSERTADA_TITULO,
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private List<Respuesta> CrearRespuestasParaIngresarBD(int preguntaId)
@@ -141,7 +132,8 @@ namespace PreguntasRespuestasApp.Presentacion
 
             if (!EstaOpcionSeleccionada())
             {
-                MessageBox.Show("Recuerde marcar la opción correcta para la pregunta");
+                MessageBox.Show(Mensaje.SELECCIONAR_OPCION_CORRECTA, Mensaje.CAMPO_REQUERIDO_TITULO,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 esValido = false;
             }
 

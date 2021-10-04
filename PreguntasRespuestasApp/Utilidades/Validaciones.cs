@@ -35,7 +35,7 @@ namespace PreguntasRespuestasApp.Utilidades
 
         public static bool EsValidoContenidoTextBox(TextBox txt, ErrorProvider eProvider)
         {
-            if (!Validaciones.TieneContenido(txt.Text))
+            if (!TieneContenido(txt.Text))
             {
                 EnviarError(eProvider, enviar: true, txt, REQUERIDO);
                 return false;

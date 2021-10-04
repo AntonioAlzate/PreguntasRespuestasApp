@@ -3,12 +3,6 @@ using PreguntasRespuestasApp.Repository;
 using PreguntasRespuestasApp.Utilidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PreguntasRespuestasApp.Presentacion
@@ -26,37 +20,69 @@ namespace PreguntasRespuestasApp.Presentacion
             CargarComboBox();
         }
 
+        private void CargarComboBox()
+        {
+            try
+            {
+                List<Jugador> jugadoresBd = jugadorRepositorio.ObtenerTodos();
+
+                if (jugadoresBd.Count > 0)
+                {
+                    foreach (Jugador jugador in jugadoresBd)
+                    {
+                        cmbUsuarios.Items.Add(jugador.NombreUsuario);
+                    }
+
+                    cmbUsuarios.SelectedIndex = 0;
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show(Mensaje.ERROR_INESPERADO, Mensaje.ERROR_TITULO,
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                Application.Exit();
+            }
+
+        }
+
         private void btnJugar_Click(object sender, EventArgs e)
         {
-
             if (rbUsuarioNuevo.Checked)
             {
                 txtNombreUsuario.Text = Validaciones.EliminarEspaciosBlanco(txtNombreUsuario.Text);
                 if (Validaciones.EsValidoContenidoTextBox(txtNombreUsuario, epIngresoUsuario) && JugadorNoExiste())
                 {
-                    CrearUsuarioNuevo();
+                    try
+                    {
+                        CrearUsuarioNuevo();
 
-                    MessageBox.Show("Se ha registrado exitosamente en nuevo jugador", "Ingresado", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                        MessageBox.Show(Mensaje.REGISTRO_JUGADOR_EXITOSO, Mensaje.REGISTRO_JUGADOR_TITULO,
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    PasarAResponderPreguntas();
+                        PasarAResponderPreguntas();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(Mensaje.REGISTRO_JUGADOR_ERROR, Mensaje.ERROR_TITULO,
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
-                    MessageBox.Show("El nombre de usuario ya existe en el sistema o el campo nombre se encuentra " +
-                        "vacío por favor verificar antes de intentar iniciar la partida.",
-                        "Requerido", MessageBoxButtons.OK,
-                        MessageBoxIcon.Stop);
+                    MessageBox.Show(Mensaje.JUGADOR_EXISTE_MAL_INGRESO_DATOS, Mensaje.CAMPO_REQUERIDO_TITULO,
+                        MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             else if (rbUsuarioExistente.Checked)
             {
-                if(cmbUsuarios.Items.Count <= 0)
+                if (cmbUsuarios.Items.Count <= 0)
                 {
-                    MessageBox.Show("No existen usuarios en el sistema por favor ingresarlo seleccionando \"Nuevo\"" +
-                        " y agregando su nombre", "Sin Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    MessageBox.Show(Mensaje.NO_EXISTEN_USUARIOS, Mensaje.SIN_USUARIOS,
+                        MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
                 else
                 {
-                    MessageBox.Show($"Bienvenido {cmbUsuarios.Text}!", "Bienvenido",
+                    MessageBox.Show($"Bienvenido {cmbUsuarios.Text}!", Mensaje.BIENVENIDO_TITULO,
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     nombreUsuario = cmbUsuarios.Text;
@@ -90,7 +116,7 @@ namespace PreguntasRespuestasApp.Presentacion
         private bool JugadorNoExiste()
         {
             string nombre = txtNombreUsuario.Text;
-            
+
             bool existe = jugadorRepositorio.ExistenciaPorNombre(nombre);
 
             if (!existe)
@@ -115,22 +141,6 @@ namespace PreguntasRespuestasApp.Presentacion
         {
             txtNombreUsuario.Enabled = esNuevo;
             cmbUsuarios.Enabled = !esNuevo;
-        }
-
-        private void CargarComboBox()
-        {
-            List<Jugador> jugadoresBd = jugadorRepositorio.ObtenerTodos();
-
-            if (jugadoresBd.Count > 0)
-            {
-                foreach (Jugador jugador in jugadoresBd)
-                {
-                    cmbUsuarios.Items.Add(jugador.NombreUsuario);
-                } 
-
-                cmbUsuarios.SelectedIndex = 0;
-            }
-
         }
 
         private void FrmIngresoUsuario_FormClosing(object sender, FormClosingEventArgs e)

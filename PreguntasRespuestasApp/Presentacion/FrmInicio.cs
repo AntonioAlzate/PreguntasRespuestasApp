@@ -1,14 +1,6 @@
-﻿using PreguntasRespuestasApp.Entidades;
-using PreguntasRespuestasApp.Persistencia;
-using PreguntasRespuestasApp.Repository;
+﻿using PreguntasRespuestasApp.Persistencia;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace PreguntasRespuestasApp.Presentacion
@@ -20,10 +12,10 @@ namespace PreguntasRespuestasApp.Presentacion
         {
             InitializeComponent();
 
-            InicializarBaseDatos();
+            GarantizarExistenciaBaseDatos();
         }
 
-        private void InicializarBaseDatos()
+        private void GarantizarExistenciaBaseDatos()
         {
             using(DatabaseContext db = new DatabaseContext())
             {

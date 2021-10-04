@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PreguntasRespuestasApp.Utilidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,8 +21,8 @@ namespace PreguntasRespuestasApp.Presentacion
         {
             InitializeComponent();
 
-            lblFelicitaciones.Text = FELICITACIONES + nombreJugador;
-            lblPuntuacion.Text = PUNTOS_ALCANZADOS + puntos + " PUNTOS";
+            lblFelicitaciones.Text = Mensaje.FELICITACIONES + nombreJugador;
+            lblPuntuacion.Text = Mensaje.PUNTOS_ALCANZADOS + puntos + " PUNTOS";
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
