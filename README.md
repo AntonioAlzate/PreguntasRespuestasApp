@@ -2,7 +2,7 @@
 
 ## Prerrequisitos
 Una vez clonado el repositorio debes tener instalado:
-- Visual Studio 2019 en su versión 16.11.3 o superior.
+- Visual Studio 2019 en su versión 16.11.3 o superior y tener instalado el módulo "Desarrollo de escritorio de .NET".
 - .NET 5
 
 No requiere instalaciones adicionales ni configuración de bases de datos ya que la persistencia se maneja mediante un archivo de base de datos SQLite que se genera automáticamente la primera vez que se compila el proyecto. El archivo tiene como nombre **preguntas_respuestas.bd** y se almacena en la ruta relativa al proyecto **.\bin\Debug\net5.0-windows**
@@ -36,12 +36,12 @@ una solución que permita tener un banco de preguntas con diferentes opciones pa
 ### Que hace la aplicación
 Se trata de una aplicación de escritorio que permite al usuario jugar al clásico preguntas y respuestas, en este caso se tienen preguntas con 4 opciones de respuesta, pero solo una es la correcta.
 
-**Condiciones iniciales: **
+**Condiciones iniciales:**
 - 5 categorías: muy fácil, fácil, medio, difícil y muy difícil
 - Cada categoría otorga una cantidad de puntos diferente
 - 25 preguntas iniciales (5 por categoría) y cada una con sus 4 opciones de respuesta
 
-**Juego: **
+**Juego:**
 - Jugador inicia en la pantalla principal donde tiene opciones para:
 	- Jugar: Esta opción permite al usuario ingresar su nombre o seleccionarlo si ya se ha registrado anteriormente, para luego pasar a iniciar el juego en la ronda 1 y con una pregunta de la categoría "muy fácil".
 
