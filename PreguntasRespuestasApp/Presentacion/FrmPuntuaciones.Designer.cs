@@ -45,6 +45,7 @@ namespace PreguntasRespuestasApp.Presentacion
             // 
             // cmbFiltrar
             // 
+            this.cmbFiltrar.BackColor = System.Drawing.Color.White;
             this.cmbFiltrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFiltrar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbFiltrar.ForeColor = System.Drawing.Color.Black;

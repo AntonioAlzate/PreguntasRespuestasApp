@@ -104,7 +104,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(200, 40);
             this.btnSalir.TabIndex = 5;
-            this.btnSalir.Text = "Volver al menú";
+            this.btnSalir.Text = "Menú principal";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 

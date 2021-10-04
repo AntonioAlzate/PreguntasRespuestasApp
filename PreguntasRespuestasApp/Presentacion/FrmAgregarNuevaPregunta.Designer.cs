@@ -45,6 +45,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.erpNuevaPregunta = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.gboxRespuestas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.erpNuevaPregunta)).BeginInit();
             this.SuspendLayout();
@@ -52,17 +53,23 @@ namespace PreguntasRespuestasApp.Presentacion
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.DarkGray;
             this.label1.Location = new System.Drawing.Point(57, 91);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 15);
+            this.label1.Size = new System.Drawing.Size(173, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Enunciado pregunta";
             // 
             // txtEnunciadoPregunta
             // 
-            this.txtEnunciadoPregunta.Location = new System.Drawing.Point(57, 110);
+            this.txtEnunciadoPregunta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(40)))), ((int)(((byte)(39)))));
+            this.txtEnunciadoPregunta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEnunciadoPregunta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEnunciadoPregunta.ForeColor = System.Drawing.Color.LightGray;
+            this.txtEnunciadoPregunta.Location = new System.Drawing.Point(57, 115);
             this.txtEnunciadoPregunta.Name = "txtEnunciadoPregunta";
-            this.txtEnunciadoPregunta.Size = new System.Drawing.Size(667, 23);
+            this.txtEnunciadoPregunta.Size = new System.Drawing.Size(667, 27);
             this.txtEnunciadoPregunta.TabIndex = 1;
             // 
             // gboxRespuestas
@@ -75,6 +82,8 @@ namespace PreguntasRespuestasApp.Presentacion
             this.gboxRespuestas.Controls.Add(this.rbOpcionC);
             this.gboxRespuestas.Controls.Add(this.rbOpcionB);
             this.gboxRespuestas.Controls.Add(this.rbOpcionA);
+            this.gboxRespuestas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.gboxRespuestas.ForeColor = System.Drawing.Color.DimGray;
             this.gboxRespuestas.Location = new System.Drawing.Point(57, 157);
             this.gboxRespuestas.Name = "gboxRespuestas";
             this.gboxRespuestas.Size = new System.Drawing.Size(667, 196);
@@ -84,6 +93,10 @@ namespace PreguntasRespuestasApp.Presentacion
             // 
             // txtOpcionD
             // 
+            this.txtOpcionD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(40)))), ((int)(((byte)(39)))));
+            this.txtOpcionD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOpcionD.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtOpcionD.ForeColor = System.Drawing.Color.LightGray;
             this.txtOpcionD.Location = new System.Drawing.Point(27, 154);
             this.txtOpcionD.Name = "txtOpcionD";
             this.txtOpcionD.Size = new System.Drawing.Size(620, 23);
@@ -91,6 +104,10 @@ namespace PreguntasRespuestasApp.Presentacion
             // 
             // txtOpcionC
             // 
+            this.txtOpcionC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(40)))), ((int)(((byte)(39)))));
+            this.txtOpcionC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOpcionC.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtOpcionC.ForeColor = System.Drawing.Color.LightGray;
             this.txtOpcionC.Location = new System.Drawing.Point(27, 111);
             this.txtOpcionC.Name = "txtOpcionC";
             this.txtOpcionC.Size = new System.Drawing.Size(620, 23);
@@ -98,6 +115,10 @@ namespace PreguntasRespuestasApp.Presentacion
             // 
             // txtOpcionB
             // 
+            this.txtOpcionB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(40)))), ((int)(((byte)(39)))));
+            this.txtOpcionB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOpcionB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtOpcionB.ForeColor = System.Drawing.Color.LightGray;
             this.txtOpcionB.Location = new System.Drawing.Point(27, 70);
             this.txtOpcionB.Name = "txtOpcionB";
             this.txtOpcionB.Size = new System.Drawing.Size(620, 23);
@@ -105,6 +126,10 @@ namespace PreguntasRespuestasApp.Presentacion
             // 
             // txtOpcionA
             // 
+            this.txtOpcionA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(40)))), ((int)(((byte)(39)))));
+            this.txtOpcionA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOpcionA.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtOpcionA.ForeColor = System.Drawing.Color.LightGray;
             this.txtOpcionA.Location = new System.Drawing.Point(27, 30);
             this.txtOpcionA.Name = "txtOpcionA";
             this.txtOpcionA.Size = new System.Drawing.Size(620, 23);
@@ -152,9 +177,14 @@ namespace PreguntasRespuestasApp.Presentacion
             // 
             // btnAgregarPregunta
             // 
-            this.btnAgregarPregunta.Location = new System.Drawing.Point(344, 375);
+            this.btnAgregarPregunta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnAgregarPregunta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAgregarPregunta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarPregunta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAgregarPregunta.ForeColor = System.Drawing.Color.LightGray;
+            this.btnAgregarPregunta.Location = new System.Drawing.Point(57, 359);
             this.btnAgregarPregunta.Name = "btnAgregarPregunta";
-            this.btnAgregarPregunta.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarPregunta.Size = new System.Drawing.Size(150, 30);
             this.btnAgregarPregunta.TabIndex = 6;
             this.btnAgregarPregunta.Text = "AGREGAR";
             this.btnAgregarPregunta.UseVisualStyleBackColor = true;
@@ -163,18 +193,21 @@ namespace PreguntasRespuestasApp.Presentacion
             // cmbCategoria
             // 
             this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(121, 51);
+            this.cmbCategoria.Location = new System.Drawing.Point(154, 51);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(121, 23);
+            this.cmbCategoria.Size = new System.Drawing.Size(121, 25);
             this.cmbCategoria.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(57, 59);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.DarkGray;
+            this.label2.Location = new System.Drawing.Point(57, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 15);
+            this.label2.Size = new System.Drawing.Size(91, 21);
             this.label2.TabIndex = 5;
             this.label2.Text = "Categoría";
             // 
@@ -183,11 +216,28 @@ namespace PreguntasRespuestasApp.Presentacion
             this.erpNuevaPregunta.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.erpNuevaPregunta.ContainerControl = this;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.ForeColor = System.Drawing.Color.LightGray;
+            this.btnCancelar.Location = new System.Drawing.Point(574, 359);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(150, 30);
+            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // FrmAgregarNuevaPregunta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.btnAgregarPregunta);
@@ -224,5 +274,6 @@ namespace PreguntasRespuestasApp.Presentacion
         private System.Windows.Forms.TextBox txtOpcionC;
         private System.Windows.Forms.TextBox txtOpcionB;
         private System.Windows.Forms.TextBox txtOpcionA;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
