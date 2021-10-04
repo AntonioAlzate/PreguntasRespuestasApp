@@ -29,6 +29,9 @@ namespace PreguntasRespuestasApp.Presentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbFiltrar = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgvPuntuacion = new System.Windows.Forms.DataGridView();
@@ -43,32 +46,65 @@ namespace PreguntasRespuestasApp.Presentacion
             // cmbFiltrar
             // 
             this.cmbFiltrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFiltrar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbFiltrar.ForeColor = System.Drawing.Color.Black;
             this.cmbFiltrar.FormattingEnabled = true;
             this.cmbFiltrar.Location = new System.Drawing.Point(368, 48);
             this.cmbFiltrar.Name = "cmbFiltrar";
-            this.cmbFiltrar.Size = new System.Drawing.Size(121, 23);
+            this.cmbFiltrar.Size = new System.Drawing.Size(121, 25);
             this.cmbFiltrar.TabIndex = 0;
             this.cmbFiltrar.SelectedIndexChanged += new System.EventHandler(this.cmbFiltrar_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(220, 56);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(161, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 15);
+            this.label1.Size = new System.Drawing.Size(201, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mostrar Puntuaciones de:";
             // 
             // dtgvPuntuacion
             // 
+            this.dtgvPuntuacion.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(40)))), ((int)(((byte)(39)))));
+            this.dtgvPuntuacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(40)))), ((int)(((byte)(39)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvPuntuacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvPuntuacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvPuntuacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombre,
             this.Puntos,
             this.Ronda,
             this.causa});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvPuntuacion.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgvPuntuacion.EnableHeadersVisualStyles = false;
+            this.dtgvPuntuacion.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.dtgvPuntuacion.Location = new System.Drawing.Point(40, 107);
             this.dtgvPuntuacion.Name = "dtgvPuntuacion";
+            this.dtgvPuntuacion.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvPuntuacion.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvPuntuacion.RowTemplate.Height = 25;
             this.dtgvPuntuacion.Size = new System.Drawing.Size(717, 264);
             this.dtgvPuntuacion.TabIndex = 2;
@@ -79,7 +115,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.nombre.HeaderText = "JUGADOR";
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
-            this.nombre.Width = 200;
+            this.nombre.Width = 204;
             // 
             // Puntos
             // 
@@ -103,22 +139,29 @@ namespace PreguntasRespuestasApp.Presentacion
             this.causa.HeaderText = "CAUSA FIN JUEGO";
             this.causa.Name = "causa";
             this.causa.ReadOnly = true;
-            this.causa.Width = 250;
+            this.causa.Width = 230;
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(347, 404);
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.btnVolver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnVolver.ForeColor = System.Drawing.Color.LightGray;
+            this.btnVolver.Location = new System.Drawing.Point(321, 377);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(121, 23);
+            this.btnVolver.Size = new System.Drawing.Size(150, 40);
             this.btnVolver.TabIndex = 3;
-            this.btnVolver.Text = "Volver Inicio";
-            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Text = "Menú principal";
+            this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // FrmPuntuaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dtgvPuntuacion);
@@ -127,6 +170,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmPuntuaciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPuntuaciones";
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPuntuacion)).EndInit();
             this.ResumeLayout(false);

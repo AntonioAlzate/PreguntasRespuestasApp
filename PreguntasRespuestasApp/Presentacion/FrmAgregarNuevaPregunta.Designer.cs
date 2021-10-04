@@ -197,6 +197,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimizeBox = false;
             this.Name = "FrmAgregarNuevaPregunta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAgregarNuevaPregunta";
             this.gboxRespuestas.ResumeLayout(false);
             this.gboxRespuestas.PerformLayout();

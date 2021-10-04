@@ -46,6 +46,8 @@ namespace PreguntasRespuestasApp.Presentacion
             // 
             this.gboxTipoUsuario.Controls.Add(this.rbUsuarioExistente);
             this.gboxTipoUsuario.Controls.Add(this.rbUsuarioNuevo);
+            this.gboxTipoUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.gboxTipoUsuario.ForeColor = System.Drawing.Color.LightGray;
             this.gboxTipoUsuario.Location = new System.Drawing.Point(87, 21);
             this.gboxTipoUsuario.Name = "gboxTipoUsuario";
             this.gboxTipoUsuario.Size = new System.Drawing.Size(209, 53);
@@ -56,9 +58,10 @@ namespace PreguntasRespuestasApp.Presentacion
             // rbUsuarioExistente
             // 
             this.rbUsuarioExistente.AutoSize = true;
+            this.rbUsuarioExistente.ForeColor = System.Drawing.Color.LightGray;
             this.rbUsuarioExistente.Location = new System.Drawing.Point(108, 22);
             this.rbUsuarioExistente.Name = "rbUsuarioExistente";
-            this.rbUsuarioExistente.Size = new System.Drawing.Size(72, 19);
+            this.rbUsuarioExistente.Size = new System.Drawing.Size(98, 25);
             this.rbUsuarioExistente.TabIndex = 1;
             this.rbUsuarioExistente.TabStop = true;
             this.rbUsuarioExistente.Text = "Existente";
@@ -68,9 +71,10 @@ namespace PreguntasRespuestasApp.Presentacion
             // rbUsuarioNuevo
             // 
             this.rbUsuarioNuevo.AutoSize = true;
+            this.rbUsuarioNuevo.ForeColor = System.Drawing.Color.LightGray;
             this.rbUsuarioNuevo.Location = new System.Drawing.Point(7, 23);
             this.rbUsuarioNuevo.Name = "rbUsuarioNuevo";
-            this.rbUsuarioNuevo.Size = new System.Drawing.Size(60, 19);
+            this.rbUsuarioNuevo.Size = new System.Drawing.Size(80, 25);
             this.rbUsuarioNuevo.TabIndex = 0;
             this.rbUsuarioNuevo.TabStop = true;
             this.rbUsuarioNuevo.Text = "Nuevo";
@@ -80,14 +84,20 @@ namespace PreguntasRespuestasApp.Presentacion
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(87, 89);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.LightGray;
+            this.label1.Location = new System.Drawing.Point(62, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 15);
+            this.label1.Size = new System.Drawing.Size(77, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nombre:";
             // 
             // txtNombreUsuario
             // 
+            this.txtNombreUsuario.BackColor = System.Drawing.Color.White;
+            this.txtNombreUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombreUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNombreUsuario.ForeColor = System.Drawing.Color.Black;
             this.txtNombreUsuario.Location = new System.Drawing.Point(145, 81);
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(121, 23);
@@ -96,17 +106,24 @@ namespace PreguntasRespuestasApp.Presentacion
             // cmbUsuarios
             // 
             this.cmbUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUsuarios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbUsuarios.ForeColor = System.Drawing.Color.Black;
             this.cmbUsuarios.FormattingEnabled = true;
             this.cmbUsuarios.Location = new System.Drawing.Point(145, 119);
             this.cmbUsuarios.Name = "cmbUsuarios";
-            this.cmbUsuarios.Size = new System.Drawing.Size(121, 23);
+            this.cmbUsuarios.Size = new System.Drawing.Size(121, 25);
             this.cmbUsuarios.TabIndex = 3;
             // 
             // btnJugar
             // 
+            this.btnJugar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnJugar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnJugar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnJugar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnJugar.ForeColor = System.Drawing.Color.LightGray;
             this.btnJugar.Location = new System.Drawing.Point(145, 159);
             this.btnJugar.Name = "btnJugar";
-            this.btnJugar.Size = new System.Drawing.Size(75, 23);
+            this.btnJugar.Size = new System.Drawing.Size(100, 30);
             this.btnJugar.TabIndex = 4;
             this.btnJugar.Text = "Jugar";
             this.btnJugar.UseVisualStyleBackColor = true;
@@ -120,6 +137,7 @@ namespace PreguntasRespuestasApp.Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(382, 204);
             this.Controls.Add(this.btnJugar);
             this.Controls.Add(this.cmbUsuarios);
@@ -129,6 +147,7 @@ namespace PreguntasRespuestasApp.Presentacion
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimizeBox = false;
             this.Name = "FrmIngresoUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmIngresoUsuario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmIngresoUsuario_FormClosing);
             this.gboxTipoUsuario.ResumeLayout(false);
